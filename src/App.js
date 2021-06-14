@@ -2,11 +2,20 @@ import React from 'react';
 import './styles/styles.css';
 import { AppRouter } from './routers/AppRouter';
 
-function App() {
+export const App = () => {
   return (
     <div className="App">
       <AppRouter/>
     </div>
   );
 }
-export default App;
+
+
+// function App() {
+//   return (
+//     <div className="App">
+//       <AppRouter/>
+//     </div>
+//   );
+// }
+// export default App;

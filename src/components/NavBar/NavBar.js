@@ -19,7 +19,7 @@ export const NavBar = () => {
                             activeClassName="active"
                             className="nav-item nav-link" 
                             exact
-                            to="/paletas"
+                            to="/category/categoryId"
                         >
                             Paletas
                         </NavLink>
@@ -27,7 +27,7 @@ export const NavBar = () => {
                             activeClassName="active"
                             className="nav-item nav-link" 
                             exact
-                            to="/canchas"
+                            to="/category/categoryId"
                         >
                             Canchas de blindex
                         </NavLink>
@@ -35,7 +35,7 @@ export const NavBar = () => {
                             activeClassName="active"
                             className="nav-item nav-link" 
                             exact
-                            to="/galeria"
+                            to="/category/categoryId"
                         >
                             Galería
                         </NavLink>

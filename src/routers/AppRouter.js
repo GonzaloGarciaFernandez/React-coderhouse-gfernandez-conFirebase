@@ -8,6 +8,7 @@ import {
 import { Item } from '../components/Item/Item';
 import { ItemListContainer } from '../components/ItemContainers/ItemListContainer';
 import { NavBar } from '../components/NavBar/NavBar';
+import { ItemDetailContainer } from '../components/ItemContainers/ItemDetailContainer';
 
 
 export const AppRouter = () => {
@@ -19,7 +20,7 @@ export const AppRouter = () => {
                     <Route exact path="/" component ={ItemListContainer} />
                     <Route exact path="/home" component ={ItemListContainer} />
                     <Route exact path="/category/:id" component ={ItemListContainer} />
-                    <Route exact path="/Item/:id" component ={ItemListContainer} />
+                    <Route exact path="/item/:id" component ={ItemDetailContainer} />
                     <Route exact path="/item" component ={Item} />
                     <Redirect to="/" />
                 </Switch>
