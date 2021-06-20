@@ -11,7 +11,7 @@ export const NavBar = () => {
                     className="navbar-brand" 
                     to="/"
                 >
-                    <img className="img-logo" src={logo} alt="logo" style={{width:'125px'}}/>
+                    <img className="img-logo ms-5" src={logo} alt="logo" style={{width:'125px'}}/>
                 </Link>
                 <div className="navbar-collapse">
                     <div className="navbar-nav">
@@ -19,7 +19,7 @@ export const NavBar = () => {
                             activeClassName="active"
                             className="nav-item nav-link" 
                             exact
-                            to="/category/categoryId"
+                            to={"/category/paleta"}
                         >
                             Paletas
                         </NavLink>
@@ -27,22 +27,14 @@ export const NavBar = () => {
                             activeClassName="active"
                             className="nav-item nav-link" 
                             exact
-                            to="/category/categoryId"
+                            to={"/category/cancha"}
                         >
-                            Canchas de blindex
-                        </NavLink>
-                        <NavLink 
-                            activeClassName="active"
-                            className="nav-item nav-link" 
-                            exact
-                            to="/category/categoryId"
-                        >
-                            Galería
+                            Canchas
                         </NavLink>
                     </div>
                 </div>
                 <div className="d-flex justify-content-rigth">
-                    <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
+                    <div className="navbar-collapse collapse w-100 order-3 dual-collapse2 me-5">
                         <ul className="navbar-nav ml-auto">
                             <NavLink 
                                 activeClassName="active"
@@ -56,7 +48,7 @@ export const NavBar = () => {
                                 activeClassName="active"
                                 className="nav-item nav-link" 
                                 exact
-                                to="/cart"
+                                to={"/cart"}
                             >
                                 <CartWidget/>
                             </NavLink>

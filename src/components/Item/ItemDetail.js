@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ItemCount } from './ItemCount';
+import { NavLink } from 'react-router-dom';
 
 export const ItemDetail = ({item}) => {
 
+    const [cantCompra, setCantCompra] = useState(0);
+
+    const onAdd = ( cantidad ) => {
+        setCantCompra( cantidad );
+    }
+
     return (
         <div className="d-flex justify-content-center my-5">
-            <div className="card" style={{width: '18rem',padding:'10px'}}>
-                <img src={item.data.pictureUrl} alt={item.data.description} className="card-img-top"/>
+            <div className="card" style={{width: '30rem',padding:'10px'}}>
+                <img src={item.data.pictureUrl} alt={item.data.description} className="card-img-top border border-dark rounded"/>
                 <div className="card-body">
                     <h5 className="card-title">{item.data.title}</h5>
                     <p className="card-text">{item.data.description}</p>
@@ -17,35 +24,22 @@ export const ItemDetail = ({item}) => {
                     <li className="list-group-item">Composición: {item.data.composition}</li>
                     <li className="list-group-item">Forma: {item.data.shape}</li>
                 </ul>
-                <ItemCount 
-                    initial={1}
-                    stock={item.data.amount}
-                />
+                {cantCompra === 0 &&
+                    <ItemCount 
+                        initial={1}
+                        stock={item.data.amount}
+                        onAdd={onAdd}
+                    />
+                }
+                {cantCompra !== 0 &&
+                    <div className="container">    
+                        <div className="row">
+                            <NavLink className="btn btn-outline-success mb-2" exact to={'/cart'}>Terminar mi compra</NavLink>
+                        </div>
+                    </div>
+                }
             </div>
         </div>
     )
-
-    // return (
-    //     <div className="d-flex justify-content-center my-5">
-    //         <div className="card" style={{width: '18rem',padding:'10px'}}>
-    //             <img src="" alt="" className="card-img-top"/>
-    //             <div className="card-body">
-    //                 <h5 className="card-title">{}</h5>
-    //                 <p className="card-text">{}</p>
-    //             </div>
-    //             <ul className="list-group list-group-flush">
-    //                 <li className="list-group-item">Precio: ${}</li>
-    //                 <li className="list-group-item">Espesor: {}</li>
-    //                 <li className="list-group-item">Composición: {}</li>
-    //                 <li className="list-group-item">Forma: {}</li>
-    //             </ul>
-    //             <ItemCount 
-    //                 initial={1}
-    //                 stock={5}
-    //             />
-    //         </div>
-    //     </div>
-    // )
-    
 }
 

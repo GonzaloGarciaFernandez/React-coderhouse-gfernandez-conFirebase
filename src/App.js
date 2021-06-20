@@ -4,18 +4,8 @@ import { AppRouter } from './routers/AppRouter';
 
 export const App = () => {
   return (
-    <div className="App">
+    <div className="App principal">
       <AppRouter/>
     </div>
   );
 }
-
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <AppRouter/>
-//     </div>
-//   );
-// }
-// export default App;

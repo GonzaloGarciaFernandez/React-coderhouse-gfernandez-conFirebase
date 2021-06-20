@@ -1,11 +1,39 @@
-import React from 'react'
+import React, {useState,useEffect} from 'react';
 import { ItemList } from '../Item/ItemList';
+import productos from '../../auxiliar/productos';
+import { useParams } from 'react-router-dom';
+
+const listaProductos = new Promise((resolve) => {
+    setTimeout(function() {
+        resolve(productos);
+    }, 2000);
+});
 
 export const ItemListContainer = () => {
+
+    const { category } = useParams();
+
+    const [producto, setProducto] = useState({
+        data: []
+    });
+
+    useEffect( () => {
+        listaProductos.then( data => {
+            if( category === undefined ) {
+                setProducto({
+                    data: data
+                })
+            } else {
+                setProducto({
+                    data: data.filter( producto => producto.category === category )
+                });
+            }
+        });
+    }, [category]);
+
     return (
         <>
-            <h1 className="text-center fw-bold border-bottom">Todos los productos:</h1>
-            <ItemList/>
+            <ItemList producto = { producto } />
         </>
     )
 }

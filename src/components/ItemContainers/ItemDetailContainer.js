@@ -1,34 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import { ItemDetail } from '../Item/ItemDetail';
-
-const producto = 
-    {
-        id: 1, 
-        title: 'Halcon', 
-        description: 'eva rubber' , 
-        price: 12700, 
-        pictureUrl: 'https://www.padelparatodos.com.ar/imagenes/productos/paletas/1-PPT/8-HALCON.jpeg',
-        width: '38mm',
-        composition: 'eva rubber',
-        shape: 'round',
-        amount: 10
-    }
-;
+import { useParams } from 'react-router-dom';
+import productos from '../../auxiliar/productos';
 
 const getItem = new Promise(resolve=>{
     setTimeout(()=>{
-        resolve(producto);
+        resolve(productos);
     },2000);
 });
 
 export const ItemDetailContainer = () => {
 
-    const [item, setItem] = useState([]);
+    const { id } = useParams();
+
+    const [item, setItem] = useState({
+        data:{}
+    });
 
     useEffect(()=>{
         getItem.then((data)=>{
             setItem({
-                data: data
+                data: data.find(producto => producto.id === parseInt(id))
             });
         });
     },[]);

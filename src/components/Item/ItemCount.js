@@ -47,7 +47,7 @@ export const ItemCount = ({initial, stock, onAdd}) => {
                 </div>
                 <button 
                     className="btn btn-outline-primary mt-1"
-                    onClick={onAdd}
+                    onClick={()=> onAdd(contador)}
                     >
                     Agregar al carrito
                 </button>
