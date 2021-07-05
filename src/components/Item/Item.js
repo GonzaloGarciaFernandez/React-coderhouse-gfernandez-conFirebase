@@ -14,7 +14,7 @@ export const Item = ({data}) => {
                 <td className="align-middle text-center fw-bold"> $ {price}</td>
                 <td className="align-middle text-center"><img src={pictureUrl} style={{width:'200px'}} className="border border-dark rounded"/></td>
                 <td className="align-middle text-center fw-bold">
-                    <NavLink exact to={`../Item/${id}`}>
+                    <NavLink exact to={`../item/${id}`}>
                         <button type="button" className="btn btn-primary">Ver producto</button>
                     </NavLink>
                 </td>

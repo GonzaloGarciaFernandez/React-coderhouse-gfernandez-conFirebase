@@ -72,7 +72,7 @@ const productos = [
         category: 'cancha'
     },
     {
-        id: 6, 
+        id: 7, 
         title: 'Cancha Nordik', 
         description: 'Pista de Pádel NORDIK' , 
         price: 1250000, 

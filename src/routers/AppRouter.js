@@ -5,9 +5,9 @@ import {
     Route,
     Redirect
 } from "react-router-dom";
-import { ItemListContainer } from '../components/ItemContainers/ItemListContainer';
+import { ItemListContainer } from '../components/ItemListContainer/ItemListContainer';
 import { NavBar } from '../components/NavBar/NavBar';
-import { ItemDetailContainer } from '../components/ItemContainers/ItemDetailContainer';
+import { ItemDetailContainer } from '../components/ItemDetailContainers/ItemDetailContainer';
 import { Cart } from '../components/Cart/Cart';
 
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Item } from './Item';
+import { Item } from '../Item/Item';
 
 export const ItemList = ({producto}) => {
     
@@ -16,11 +16,11 @@ export const ItemList = ({producto}) => {
                 <thead>
                     <tr>
                         <th className="text-center">ID</th>
-                        <th className="text-center">Titulo</th>
+                        <th className="text-center">Título</th>
                         <th className="text-center">Descripcion</th>
                         <th className="text-center">Precio</th>
                         <th className="text-center">Imagen</th>
-                        <th className="text-center">Acciones</th>
+                        <th className="text-center"></th>
                     </tr>
                 </thead>
                 <tbody>

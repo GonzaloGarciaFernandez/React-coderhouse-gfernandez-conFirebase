@@ -16,14 +16,15 @@ export const ItemCount = ({initial, stock, onAdd}) => {
         if (contador>= stock){
             setDesaBotonSumar(true);
         }
-    }, [contador])
+    }, [contador]);
 
     const sumar = () =>{
         setContador(contador+1);
-    }
+    };
+
     const restar = () =>{
         setContador(contador-1);
-    }
+    };
 
     return (
         <div className="container d-flex justify-content-center">
