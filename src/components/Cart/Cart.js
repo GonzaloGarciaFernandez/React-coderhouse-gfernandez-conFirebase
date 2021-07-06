@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 
 export const Cart = () => {
 
-    const {cart, clear} = useContext(CartContext);
+    const {cart, clear, cartTotal} = useContext(CartContext);
 
     const listaCart = cart.length?cart.map((data) => {
     return(
@@ -43,6 +43,7 @@ export const Cart = () => {
                 cart.length !== 0 &&
                 <div className="row">
                     <div className="col-md-4 offset-md-4">
+                        <p>{cartTotal.toString()}</p>
                         <div className="d-flex justify-content-around mt-3">
                             <NavLink className="btn btn-primary" exact to={"/"}>Seguir Comprando</NavLink>
                             <button className="btn btn-danger" onClick={() => clear()}>Vaciar carrito</button>
