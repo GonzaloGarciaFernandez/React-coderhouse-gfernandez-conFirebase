@@ -8,11 +8,11 @@ export const ItemDetail = ({item}) => {
 
     const [cantCompra, setCantCompra] = useState(0);
 
-    const {addItem} = useContext(CartContext)
+    const {addItem} = useContext(CartContext);
 
     const onAdd = ( cantidad ) => {
         setCantCompra( cantidad );
-    }
+    };
 
     return (
         <div className="d-flex justify-content-center my-5">
@@ -38,7 +38,10 @@ export const ItemDetail = ({item}) => {
                 {cantCompra !== 0 &&
                     <div className="container">    
                         <div className="row">
-                            <NavLink className="btn btn-outline-success mb-2" exact to={'/cart'} onClick={()=>addItem({item, cantCompra})}>Terminar mi compra</NavLink>
+                            <NavLink className="btn btn-outline-primary mb-2" exact to={'/'} onClick={()=>addItem({item, cantCompra})}>Agregar al Carrito y Seguir Comprando</NavLink>
+                        </div>
+                        <div className="row">
+                            <NavLink className="btn btn-outline-success mb-2" exact to={'/cart'} onClick={()=>addItem({item, cantCompra})}>Agregar al Carrito y Terminar mi compra</NavLink>
                         </div>
                     </div>
                 }

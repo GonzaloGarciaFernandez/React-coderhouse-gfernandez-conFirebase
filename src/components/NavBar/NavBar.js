@@ -40,14 +40,6 @@ export const NavBar = () => {
                                 activeClassName="active"
                                 className="nav-item nav-link" 
                                 exact
-                                to="/login"
-                            >
-                                Logout
-                            </NavLink>
-                            <NavLink 
-                                activeClassName="active"
-                                className="nav-item nav-link" 
-                                exact
                                 to={"/cart"}
                             >
                                 <CartWidget/>
