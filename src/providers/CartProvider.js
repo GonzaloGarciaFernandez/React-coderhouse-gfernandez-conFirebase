@@ -26,7 +26,6 @@ export const CartProvider = ({ children, defaultValue=[] }) => {
         }
     };
 
-
     const removeItem = (id) =>{
         let newCart = cart.filter(x => x.item.data.id !== id);
         setCart(newCart);

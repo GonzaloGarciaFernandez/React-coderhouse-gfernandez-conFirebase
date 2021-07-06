@@ -43,7 +43,7 @@ export const Cart = () => {
                 cart.length !== 0 &&
                 <div className="row">
                     <div className="col-md-4 offset-md-4">
-                        <p>{cartTotal.toString()}</p>
+                        <p className="text-center fw-bolder">Total de la Compra: $ {cartTotal}</p>
                         <div className="d-flex justify-content-around mt-3">
                             <NavLink className="btn btn-primary" exact to={"/"}>Seguir Comprando</NavLink>
                             <button className="btn btn-danger" onClick={() => clear()}>Vaciar carrito</button>
