@@ -9,33 +9,41 @@ export const CartProvider = ({ children, defaultValue=[] }) => {
 
     const addItem = (objeto) => {
         if(isInCart(objeto.item.data)){
-            cart.map(x => increaseQuantity(x, objeto));
-            var amountToIncreaseInMatch = objeto.cantCompra * objeto.item.data.price;
-            setCartTotal(cartTotal + amountToIncreaseInMatch);
+            cart.map(x => aumentarCantidad(x, objeto));
+            let cantidadParaAumentar = objeto.cantCompra * objeto.item.data.price;
+            setCartTotal(cartTotal + cantidadParaAumentar);
             return;
-        }
-        var amountToIncrease = objeto.item.data.price * objeto.cantCompra;
-        console.log("OBJETO AL CARRITO", objeto);
+        };
+        var cantidadAIncrementar = objeto.item.data.price * objeto.cantCompra;
         setCart([...cart, objeto]);
-        setCartTotal(cartTotal + amountToIncrease);
+        setCartTotal(cartTotal + cantidadAIncrementar);
     };
 
-    const increaseQuantity = ( x, objeto )=>{
+    const aumentarCantidad = ( x, objeto )=>{
         if( x.item.data === objeto.item.data ){
             x.amount = x.amount + objeto.amount;
-        }
+        };
+    };
+
+    const descontarCantidad = (id) =>{
+        let unitPrice = cart.filter(x => x.item.data.id === id);
+        console.log(unitPrice)
+        let amountToDiscount = unitPrice[0].item.data.price * unitPrice[0].cantCompra;
+        setCartTotal(cartTotal - amountToDiscount);
     };
 
     const removeItem = (id) =>{
+        descontarCantidad(id);
         let newCart = cart.filter(x => x.item.data.id !== id);
         setCart(newCart);
     };
 
     const clear = () =>{
         setCart(defaultValue);
+        setCartTotal(0);
     };
 
-    function getFromCart(id) {
+    const getFromCart = (id) => {
         return cart.find(x => x.id === id);
     };
 
