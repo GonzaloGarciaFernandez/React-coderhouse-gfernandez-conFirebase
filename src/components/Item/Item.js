@@ -8,7 +8,6 @@ export const Item = ({data}) => {
     return (
         <>
             <tr key={id}>
-                <td className="align-middle text-center fw-bold">{id}</td>
                 <td className="align-middle text-center fw-bold">{title}</td>
                 <td className="align-middle text-center fw-bold">{description}</td>
                 <td className="align-middle text-center fw-bold"> $ {price}</td>

@@ -3,7 +3,7 @@ import { Item } from '../Item/Item';
 
 export const ItemList = ({producto}) => {
     
-    const listaItems = producto.data.length?producto.data.map((data) => {
+    const listaItems = producto.length?producto.map((data) => {
 
     return(
         <Item data={data}/>
@@ -15,7 +15,6 @@ export const ItemList = ({producto}) => {
             <table className="table table-striped">
                 <thead>
                     <tr>
-                        <th className="text-center">ID</th>
                         <th className="text-center">Título</th>
                         <th className="text-center">Descripcion</th>
                         <th className="text-center">Precio</th>

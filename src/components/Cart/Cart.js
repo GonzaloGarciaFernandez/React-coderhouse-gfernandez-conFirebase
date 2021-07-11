@@ -25,7 +25,6 @@ export const Cart = () => {
             <table className="table table-striped">
                 <thead>
                     <tr>
-                        <th className="text-center">ID</th>
                         <th className="text-center">Título</th>
                         <th className="text-center">Descripcion</th>
                         <th className="text-center">Imagen</th>

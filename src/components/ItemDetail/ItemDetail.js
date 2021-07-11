@@ -17,21 +17,21 @@ export const ItemDetail = ({item}) => {
     return (
         <div className="d-flex justify-content-center my-5">
             <div className="card animate__bounceIn" style={{width: '30rem',padding:'10px'}}>
-                <img src={item.data.pictureUrl} alt={item.data.description} className="card-img-top border border-dark rounded "/>
+                <img src={item.pictureUrl} alt={item.description} className="card-img-top border border-dark rounded "/>
                 <div className="card-body">
-                    <h5 className="card-title">{item.data.title}</h5>
-                    <p className="card-text">{item.data.description}</p>
+                    <h5 className="card-title">{item.title}</h5>
+                    <p className="card-text">{item.description}</p>
                 </div>
                 <ul className="list-group list-group-flush">
-                    <li className="list-group-item">Precio: ${item.data.price}</li>
-                    <li className="list-group-item">Espesor: {item.data.width}</li>
-                    <li className="list-group-item">Composición: {item.data.composition}</li>
-                    <li className="list-group-item">Forma: {item.data.shape}</li>
+                    <li className="list-group-item">Precio: ${item.price}</li>
+                    <li className="list-group-item">Espesor: {item.width}</li>
+                    <li className="list-group-item">Composición: {item.composition}</li>
+                    <li className="list-group-item">Forma: {item.shape}</li>
                 </ul>
                 {cantCompra === 0 &&
                     <ItemCount 
                         initial={1}
-                        stock={item.data.amount}
+                        stock={item.amount}
                         onAdd={onAdd}
                     />
                 }

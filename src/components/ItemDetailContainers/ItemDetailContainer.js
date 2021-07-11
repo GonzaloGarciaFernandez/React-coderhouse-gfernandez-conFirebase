@@ -1,13 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ItemDetail } from '../ItemDetail/ItemDetail';
 import { useParams } from 'react-router-dom';
-import productos from '../../auxiliar/productos';
-
-const getItem = new Promise(resolve=>{
-    setTimeout(()=>{
-        resolve(productos);
-    },2000);
-});
+import {getFirestore} from '../../firebase/firebase';
 
 export const ItemDetailContainer = () => {
 
@@ -17,13 +11,20 @@ export const ItemDetailContainer = () => {
         data:{}
     });
 
-    useEffect(()=>{
-        getItem.then((data)=>{
-            setItem({
-                data: data.find(producto => producto.id === parseInt(id))
-            });
+    useEffect(() => {
+        const db = getFirestore();
+        const itemCollection = db.collection("productos");
+        const itemById = itemCollection.doc(id);
+
+        itemById.get().then((querySnapshot) => {
+            if(Object.keys(querySnapshot).length === 0){
+                console.log("No results!");
+            };
+            setItem(querySnapshot.data());
+        }).catch((error) => {
+            console.log("Error searching items", error);
         });
-    },[]);
+    }, [id]);
 
     return (
         <>

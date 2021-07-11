@@ -1,34 +1,30 @@
 import React, {useState,useEffect} from 'react';
 import { ItemList } from '../ItemList/ItemList';
-import productos from '../../auxiliar/productos';
 import { useParams } from 'react-router-dom';
-
-const listaProductos = new Promise((resolve) => {
-    setTimeout(function() {
-        resolve(productos);
-    }, 2000);
-});
+import {getFirestore} from '../../firebase/firebase';
 
 export const ItemListContainer = () => {
 
     const { category } = useParams();
 
-    const [producto, setProducto] = useState({
-        data: []
-    });
+    const [producto, setProducto] = useState([]);
 
     useEffect( () => {
-        listaProductos.then( data => {
-            if( category === undefined ) {
-                setProducto({
-                    data: data
-                })
-            } else {
-                setProducto({
-                    data: data.filter( producto => producto.category === category )
-                });
-            }
-        });
+        const db = getFirestore();
+        let itemCollection;
+
+        if (category){
+            itemCollection = db.collection("productos").where("category", "==", `${category}`);
+        } else{
+            itemCollection = db.collection("productos");
+        };
+
+        const itemCollectionQuery = itemCollection.get()
+        itemCollectionQuery.then((querySnapshot) => {
+            let documento = querySnapshot.docs.map(doc => ({...doc.data(), id: doc.id}))
+            setProducto(documento);
+        })
+        .catch((e) => {console.log(e)})
     }, [category]);
 
     return (
