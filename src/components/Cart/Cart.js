@@ -45,9 +45,12 @@ export const Cart = () => {
                         <div className="d-flex justify-content-around mt-3">
                             <p className="text-center fw-bolder btn btn-dark">Total de la Compra: $ {cartTotal}</p>
                         </div>
+                    </div>
+                    <div className="col-md-6 offset-md-3">
                         <div className="d-flex justify-content-around mt-3">
                             <NavLink className="btn btn-primary" exact to={"/"}>Seguir Comprando</NavLink>
                             <button className="btn btn-danger" onClick={() => clear()}>Vaciar carrito</button>
+                            <NavLink className="btn btn-success" exact to={"/checkout"}>Finalizar Compra</NavLink>
                         </div>
                     </div>
                 </div>

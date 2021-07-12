@@ -9,7 +9,7 @@ import { ItemListContainer } from '../components/ItemListContainer/ItemListConta
 import { NavBar } from '../components/NavBar/NavBar';
 import { ItemDetailContainer } from '../components/ItemDetailContainers/ItemDetailContainer';
 import { Cart } from '../components/Cart/Cart';
-
+import { Checkout } from '../components/Checkout/Checkout';
 
 export const AppRouter = () => {
     return (
@@ -22,6 +22,7 @@ export const AppRouter = () => {
                     <Route exact path="/category/:category" component ={ItemListContainer} />
                     <Route exact path="/item/:id" component ={ItemDetailContainer} />
                     <Route exact path="/cart" component ={Cart} />
+                    <Route exact path="/checkout" component ={Checkout} />
                     <Redirect to="/" />
                 </Switch>
             </div>

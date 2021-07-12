@@ -3,7 +3,6 @@ import { CartContext } from '../../context/CartContext';
 
 export const CartDetailList = ({data}) => {
 
-    //Desestructuro item y cantidad del carrito:
     const {item, cantCompra} = data;
 
     const {removeItem} = useContext(CartContext);
