@@ -12,7 +12,7 @@ El proyecto se basa en un ecommerce (temática padel) que posee las siguientes c
 
 ## Demostración:
 
-![](nombre-del-gif.gif)
+![](https://media.giphy.com/media/vjADCOXBx1ZYWPC4jx/giphy.gif)
 
 # Tecnologías, librerías, frameworks, plataformas usadas:
 
@@ -26,11 +26,11 @@ El proyecto se basa en un ecommerce (temática padel) que posee las siguientes c
 
 ## Scripts disponibles:
 
-En la raíz del proyecto, puede ejecutar:
+En la raíz del proyecto, ejecutar:
 
 ### `npm install`
 
 ### `npm start`
 
-La aplicación sse ejecutará en modo de desarrollo:
+La aplicación se ejecutará en modo de desarrollo:
 Para verlo en el navegador colocar: [http://localhost:3000](http://localhost:3000).
